@@ -2,6 +2,7 @@ package com.Hostel.main.controller;
 
 import com.Hostel.main.model.Category;
 import com.Hostel.main.service.CategoryService;
+import com.Hostel.main.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,8 +16,11 @@ import java.util.Optional;
 @Controller
 public class AdminController {
     @Autowired
-//    CategoryService categoryService;
     CategoryService categoryService;
+//    @Autowired
+//    ProductService productService;
+
+    //Category
     @GetMapping("/admin")
     public String adminHome(){
         return "adminHome";
@@ -54,4 +58,11 @@ public class AdminController {
         }else
             return "404";
     }
+
+    //Product
+//    @GetMapping("/admin/products")
+//    public String deleteCategory(Model model){
+//        model.addAttribute(ProductService);
+//        return "products";
+//    }
 }
