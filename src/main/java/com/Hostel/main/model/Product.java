@@ -1,2 +1,5 @@
-package com.Hostel.main.model;public class Product {
+package com.Hostel.main.model;
+
+public class Product {
+
 }
