@@ -1,5 +1,6 @@
 package com.Hostel.main.controller;
 
+import com.Hostel.main.dto.ProductDTO;
 import com.Hostel.main.model.Category;
 import com.Hostel.main.service.CategoryService;
 import com.Hostel.main.service.ProductService;
@@ -17,8 +18,8 @@ import java.util.Optional;
 public class AdminController {
     @Autowired
     CategoryService categoryService;
-//    @Autowired
-//    ProductService productService;
+    @Autowired
+    ProductService productService;
 
     //Category
     @GetMapping("/admin")
@@ -60,9 +61,17 @@ public class AdminController {
     }
 
     //Product
-//    @GetMapping("/admin/products")
-//    public String deleteCategory(Model model){
-//        model.addAttribute(ProductService);
-//        return "products";
-//    }
+    @GetMapping("/admin/products")
+    public String products(Model model){
+        model.addAttribute("product", productService.getAllProduct());
+        return "products";
+    }
+
+    @GetMapping("/admin/products/add")
+    public String productAddGet(Model model){
+        model.addAttribute("productDTO", new ProductDTO());
+        model.addAttribute("categories", categoryService.getAllCategory());
+        return "productsAdd";
+    }
+
 }
