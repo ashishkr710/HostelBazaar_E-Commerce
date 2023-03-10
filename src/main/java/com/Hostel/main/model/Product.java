@@ -3,7 +3,6 @@ package com.Hostel.main.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.awt.*;
 
 @Entity
 @Data

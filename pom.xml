@@ -8,10 +8,11 @@
 		<version>2.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sheryians</groupId>
-	<artifactId>major</artifactId>
+	<groupId>com.Hostel</groupId>
+	<artifactId>Hostel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>major</name>
+	<name>Hostel
+	</name>
 	<description>Hostel Bazaar, An e commerce project</description>
 
 	<properties>
@@ -88,6 +89,7 @@
 			<groupId>com.paytm</groupId>
 			<artifactId>paytm-checksum</artifactId>
 			<version>1.2.0</version>
+
 		</dependency>
 	</dependencies>
 	<repositories>
