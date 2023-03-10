@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @Controller
 public class AdminController {
-    public static String uploadDir = System.getProperty("user.dir") + "src/main/resources/static/productImages";
+    public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/productImages";
     @Autowired
     CategoryService categoryService;
     @Autowired
@@ -67,7 +67,7 @@ public class AdminController {
     //Product
     @GetMapping("/admin/products")
     public String products(Model model){
-        model.addAttribute("product", productService.getAllProduct());
+        model.addAttribute("products", productService.getAllProduct());
         return "products";
     }
 
@@ -75,11 +75,12 @@ public class AdminController {
     public String productAddGet(Model model){
         model.addAttribute("productDTO", new ProductDTO());
         model.addAttribute("categories", categoryService.getAllCategory());
+        System.out.println("productAdd");
         return "productsAdd";
     }
 
     @PostMapping("/admin/products/add")
-    public String productAddPost(@ModelAttribute("ProductDTO")ProductDTO productDTO,
+    public String productAddPost(@ModelAttribute("productDTO")ProductDTO productDTO,
                                  @RequestParam("productImage")MultipartFile file,
                                  @RequestParam("imgName")String imgName)throws IOException{
 
@@ -100,7 +101,8 @@ public class AdminController {
         }
         product.setImageName(imageUUID);
         productService.addProduct(product);
-        return "redirect:/admin/product";
+        System.out.println("Chack");
+        return "redirect:/admin/products";
     }
     }
 
