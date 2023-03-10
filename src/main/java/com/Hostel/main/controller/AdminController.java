@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @Controller
 public class AdminController {
-    public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/productImage";
+    public static String uploadDir = System.getProperty("user.dir") + "src/main/resources/static/productImages";
     @Autowired
     CategoryService categoryService;
     @Autowired
@@ -90,18 +90,16 @@ public class AdminController {
         product.setPrice(productDTO.getPrice());
         product.setWeight(productDTO.getWeight());
         product.setDescription(productDTO.getDescription());
-//        product.setImageName();
         String imageUUID;
         if (!file.isEmpty()){
             imageUUID = file.getOriginalFilename();
             Path fileNameAndPath = Paths.get(uploadDir, imageUUID);
             Files.write(fileNameAndPath, file.getBytes());
-
-        }else
-        {  imageUUID = imgName;}
+        }else {
+            imageUUID = imgName;
+        }
         product.setImageName(imageUUID);
         productService.addProduct(product);
-
         return "redirect:/admin/product";
     }
     }
