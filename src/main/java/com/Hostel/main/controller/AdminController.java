@@ -101,8 +101,32 @@ public class AdminController {
         }
         product.setImageName(imageUUID);
         productService.addProduct(product);
-        System.out.println("Chack");
         return "redirect:/admin/products";
+    }
+
+    @GetMapping("/admin/product/delete/{id}")
+    public String deleteProduct(@PathVariable long id){
+        productService.removeProductById(id);
+        return "redirect:/admin/products";
+    }
+
+    @GetMapping("/admin/product/update/{id}")
+    public String updateProductGet(@PathVariable long id, Model model){
+
+        Product product = productService.getProductById(id).get();
+        ProductDTO productDTO = new ProductDTO();
+        productDTO.setId(product.getId());
+        productDTO.setName(product.getName());
+        productDTO.setCategoryId((product.getCategory().getId()));
+        productDTO.setPrice(product.getPrice());
+        productDTO.setWeight(product.getWeight());
+        productDTO.setDescription(product.getDescription());
+        productDTO.setImageName(product.getImageName());
+
+        model.addAttribute("categories", categoryService.getAllCategory());
+        model.addAttribute("productDTO",productDTO);
+
+        return "productsAdd";
     }
     }
 
