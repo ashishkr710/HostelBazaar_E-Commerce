@@ -75,7 +75,6 @@ public class AdminController {
     public String productAddGet(Model model){
         model.addAttribute("productDTO", new ProductDTO());
         model.addAttribute("categories", categoryService.getAllCategory());
-        System.out.println("productAdd");
         return "productsAdd";
     }
 
