@@ -26,7 +26,7 @@ public class ProductService {
        return productRepository.findById(id);
     }
 
-    public List<Product> getAllProductsByCategory(int id){
+    public List<Product> getAllProductsByCategoryId(int id){
         return productRepository.findAllByCategory_Id(id);
     }
 }
