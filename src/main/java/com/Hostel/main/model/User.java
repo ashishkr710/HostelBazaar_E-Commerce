@@ -27,7 +27,7 @@ public class User {
     @Email
     private String email;
 
-    @NotNull
+
     private String password;
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
