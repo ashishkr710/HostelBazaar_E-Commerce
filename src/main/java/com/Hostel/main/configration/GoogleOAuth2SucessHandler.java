@@ -4,8 +4,6 @@ import com.Hostel.main.model.Role;
 import com.Hostel.main.model.User;
 import com.Hostel.main.repository.RoleRepository;
 import com.Hostel.main.repository.UserRepository;
-//import org.apache.http.client.RedirectStrategy;
-//import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -37,9 +35,11 @@ public class GoogleOAuth2SucessHandler implements AuthenticationSuccessHandler  
         OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
         String email = token.getPrincipal().getAttributes().get("email").toString();
         if (userRepository.findByEmail(email).isPresent()){
+            return;
 
         }
         else {
+
             User user = new User();
             user.setFirstName(token.getPrincipal().getAttributes().get("given_name").toString());
             user.setLastName(token.getPrincipal().getAttributes().get("family_name").toString());
@@ -48,7 +48,10 @@ public class GoogleOAuth2SucessHandler implements AuthenticationSuccessHandler  
             roles.add(roleRepository.findById(2).get());
             user.setRoles(roles);
             userRepository.save(user);
+
         }
+
+
         redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse ,"/");
     }
 }
