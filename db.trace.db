@@ -1,0 +1,30 @@
+2023-03-15 15:03:47 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.COLUMNS INFORMATION_SCHEMA.[*]COLUMNS"; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS INFORMATION_SCHEMA.COLUMNS [42000-200]
+2023-03-15 15:03:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*]"; expected "INSERT"; SQL statement:
+ID [42001-200]
+2023-03-15 15:03:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*]"; expected "INSERT"; SQL statement:
+ID [42001-200]
+2023-03-15 15:05:31 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ROLES[*]"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+ROLES [42001-200]
+2023-03-15 15:05:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ROLES[*]"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+ROLES [42001-200]
+2023-03-15 15:05:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ROLES[*]"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+ROLES [42001-200]
+2023-03-15 15:05:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ROLES[*]"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+ROLES [42001-200]
+2023-03-15 15:05:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ROLES[*]"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+ROLES [42001-200]
+2023-03-15 15:05:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ROLES[*]"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+ROLES [42001-200]
+2023-03-15 15:06:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FORM[*] PRODUCT"; SQL statement:
+select * form product [42000-200]
