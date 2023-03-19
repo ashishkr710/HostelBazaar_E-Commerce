@@ -24,6 +24,7 @@ import java.util.List;
 public class GoogleOAuth2SucessHandler implements AuthenticationSuccessHandler  {
     @Autowired
     RoleRepository roleRepository;
+
     @Autowired
     UserRepository userRepository;
 
@@ -36,7 +37,6 @@ public class GoogleOAuth2SucessHandler implements AuthenticationSuccessHandler  
         String email = token.getPrincipal().getAttributes().get("email").toString();
         if (userRepository.findByEmail(email).isPresent()){
             return;
-
         }
         else {
 
