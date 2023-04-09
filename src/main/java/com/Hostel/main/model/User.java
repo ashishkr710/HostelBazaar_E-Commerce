@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -24,11 +23,11 @@ public class User {
 
     @Column(nullable = false, unique = true)
     @NotEmpty
-    @Email
+    @Email(message = "{error.invalid_email}")
     private String email;
 
-
     private String password;
+
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
@@ -39,7 +38,7 @@ public class User {
 
 
     public User(User user) {
-        this.id = user.getId();
+//        this.id = user.getId();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
         this.email = user.getEmail();

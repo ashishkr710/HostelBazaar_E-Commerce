@@ -43,6 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/login")
+//                .matches()
                 .invalidateHttpSession(true)
                 .deleteCookies("JESSIONID")
                 .and()
@@ -51,6 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable();
         http.headers().frameOptions().disable(); //Remove for other DBMS
+
     }
 
     @Bean
@@ -58,8 +61,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(customUserDetailService);
         auth.userDetailsService(customUserDetailService);
     }
 
@@ -67,4 +72,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/resources/**", "/static/**", "/images/**", "/productImages/**", "/css/**", "/js/**");
     }
+
 }
