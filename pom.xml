@@ -51,6 +51,21 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--		</dependency>-->
+
+
+			<!-- other dependencies here -->
+<!--			<dependency>-->
+<!--				<groupId>mysql</groupId>-->
+<!--				<artifactId>mysql-connector-java</artifactId>-->
+<!--&lt;!&ndash;				<version>{your-mysql-version}</version>&ndash;&gt;-->
+<!--			</dependency>-->
+
+
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
