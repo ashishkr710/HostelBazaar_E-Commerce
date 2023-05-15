@@ -1,9 +1,5 @@
 package com.Hostel.main;
-
-
-
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+//This file is for creating BCryptPassword for testing the application.
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PasswordEncoder {
@@ -12,7 +8,5 @@ public class PasswordEncoder {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(password);
         System.out.println(encodedPassword);
-
-
     }
 }
