@@ -1,0 +1,30 @@
+
+.notFound{
+    display: flex !;
+}
+.notFound .img1{
+    height: 50px;
+    width: 200px;
+    background-image: linear-gradient(to right, rgb(235, 216, 7), rgb(247, 58, 45));
+}
+.notFound img{
+
+    margin-top: 100px;
+    height: 200px;
+}
+center{
+    min-height: 600px;
+}
+
+
+.default-btn-new{
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 10px ;
+}
+
+.default-btn-new:hover{
+    background-image: linear-gradient(to right, rgb(22, 96, 234), rgb(45, 236, 247));
+    cursor: pointer;
+    transition: 0.2s all;
+}

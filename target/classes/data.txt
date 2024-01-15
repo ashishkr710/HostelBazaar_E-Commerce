@@ -8,3 +8,4 @@ INSERT INTO users (id, email, password, firstName, lastName) VALUES
 insert into user_role(user_id, role_id) values
 (1,1),
 (1,2);
+This is the data which have to be insert in the database. After connecting the database

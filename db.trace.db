@@ -1422,3 +1422,12 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:E:/Programin
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 66 more
+2023-06-20 01:45:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION VARCHAR(255)": "STRINGDECODE('A novel by Paulo Coelho.\r\nOriginally written in Portuguese, it became a widely translated international bestsell... (290)"; SQL statement:
+insert into product (category_id, description, image_name, name, price, weight, id) values (?, ?, ?, ?, ?, ?, ?) [22001-200]
+2023-06-20 01:49:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION VARCHAR(255)": "'Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist f... (262)"; SQL statement:
+insert into product (category_id, description, image_name, name, price, weight, id) values (?, ?, ?, ?, ?, ?, ?) [22001-200]
+2023-06-20 01:54:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION VARCHAR(255)": "'Britannia Treat Pineapple Cream Biscuits are packed with delicious cream to make them a treat for kids. The smooth cream filled... (565)"; SQL statement:
+insert into product (category_id, description, image_name, name, price, weight, id) values (?, ?, ?, ?, ?, ?, ?) [22001-200]

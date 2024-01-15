@@ -1,0 +1,25 @@
+.navbar-nav li {
+    font-size: 18px;
+    /* margin-left: 20px; */
+    padding: 10px;
+    margin: 10px;
+    outline: unset;
+
+}
+.navbar-nav li:hover, button:hover{
+    background-image: linear-gradient(to right, rgb(22, 96, 234), rgb(45, 236, 247));
+    
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.welcome-admin {
+    font-weight: 600;
+    color: white;
+    background-image: linear-gradient(to right, rgb(22, 96, 234), rgb(45, 236, 247));
+}
+
+
+button{
+    outline: unset;
+}

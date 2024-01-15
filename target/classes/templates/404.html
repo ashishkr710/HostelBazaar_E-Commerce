@@ -1,26 +1,168 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
     <meta charset="UTF-8">
-      <link rel="stylesheet" href="../static/css/404.css">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../static/css/404.css">
+    <link rel="stylesheet" href="404-new.css">
+
     <title>Error</title>
     <link rel="stylesheet" href="/css/404.css">
 </head>
-<body style="background-color:black;">
-<div style="text-align: center;">
-    <section class="notFound">
-        <div class="img">
-            <img src="https://assets.codepen.io/5647096/backToTheHomepage.png" alt="Back to the Homepage"/>
-            <img src="https://assets.codepen.io/5647096/Delorean.png" alt="El Delorean, El Doc y Marti McFly"/>
-        </div>
-</div>
-<div class="text">
-    <h3>404</h3>
-    <h2>PAGE NOT FOUND</h2>
-    <h3>BACK TO HOME?</h3>
-    <button style="padding: 10px; color: black">BACK TO HOME?</button>
 
-</div>
-</section>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-0 ">
+        <div class="container-fluid bg-light main-site-head-top  ">
+            <a class="navbar-brand  pl-2 pr-2" href="#">
+                <h3>HostelBazaar</h3>
+                <!-- <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="40"
+                    class="d-inline-block align-top" alt="" /> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active default-new-btn">
+                        <a class="nav-link" th:href="@{/}" href="#">Home</a>
+                    </li>
+                    <li class="nav-item active default-new-btn">
+                        <a class="nav-link " th:href="@{/shop}" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item active default-new-btn">
+                        <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">Login</a>
+                    </li>
+                    <li class="nav-item active default-new-btn">
+                        <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">Logout</a>
+                    </li>
+                    <!-- <li class="nav-item active default-new-btn">
+                        <a class="nav-link" th:href="@{/cart}" href="#">Cart</a>
+                    </li>
+                    <li class="nav-item active cartNumber">
+                        <span class="nav-link" th:text="${cartCount}">0</span>
+                    </li> -->
+                    <li>
+                        <button type="button" class="btn">
+                            <a href="" th:href="@{/cart}">
+                                <i class="fa fa-cart-plus"></i> <span class="badge badge-light nav-link"
+                                    th:text="${cartCount}">9</span>
+                                <span class="sr-only">unread messages</span>
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <center>
+        <div style="text-align: center; margin-bottom: 100px;">
+            <section class="notFound">
+                <div class="img">
+                    <h3 style="margin-top: 50px;">Error: 404</h3>
+                    <img class="img1" src="https://assets.codepen.io/5647096/backToTheHomepage.png" alt="Back to the Homepage" />
+                    <br><img style="" src="https://assets.codepen.io/5647096/Delorean.png" alt="El Delorean, El Doc y Marti McFly" />
+                </div>
+            </section>
+            <div class="text" style="margin-top: 30px;">
+                <button class="default-btn-new">BACK TO HOME?</button>
+            </div>
+        </div>
+    </center>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4 bg-dark text-light ">
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-4 mt-md-0 mt-3">
+                    <!-- Content -->
+                    <h5 class="text-uppercase ">Hostel Bazaar</h5>
+                    <p>Get your needs on your feeds.
+                        <!-- <br> Explore you collage product in descent deal -->
+                    </p>
+                    <a class="navbar-brand main-site-head" href="#">
+                        <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="40"
+                            class="d-inline-block align-top" alt="" />
+                    </a>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <!-- Grid column -->
+                <div class="col-md-4 mb-md-0 mb-3">
+                    <!-- Links -->
+                    <h5 class="text-uppercase">For You</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Todays Deals</a>
+                        </li>
+                        <li>
+                            <a href="#!">Discount</a>
+                        </li>
+                        <li>
+                            <a href="#!">Jackpot</a>
+                        </li>
+
+                        <li>
+                            <a href="#!">Categories</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Our Info</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#!">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#!">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#!">Disclaimer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="/"> HostelBazaar.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
 </body>
+
 </html>
